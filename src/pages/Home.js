@@ -4,27 +4,15 @@ import { Footer } from "../components/footer/Footer";
 import { MovieGuide } from "../components/home/MovieGuide";
 import { MovieScroll } from "../components/home/MovieScroll";
 import { Navbar } from "../components/navbar/Navbar";
-import { logout, subscribeToAuthChanges } from "../services/authService";
 import { styles } from "../styles/styles.css";
 
-export const Home = () => {
+export const Home = ({ user }) => {
   const overlayStyles = {
     pointerEvents: "none",
     userSelect: "none",
   };
 
   const navigate = useNavigate();
-
-  const handleLogout = () => {
-    logout()
-      .then(() => {
-        navigate("/");
-        console.log("Signed out successfully");
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
 
   return (
     <div>
@@ -35,7 +23,7 @@ export const Home = () => {
           style={overlayStyles}
         ></div>
 
-        <Navbar />
+        <Navbar user={user} />
 
         <div className="flex flex-col md:flex-row justify-center px-14 py-4">
           {/* Left Section (Upper Left) */}

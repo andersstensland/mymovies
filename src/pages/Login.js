@@ -4,8 +4,9 @@ import { Link, useNavigate } from "react-router-dom";
 import { Footer } from "../components/footer/Footer";
 import { loginUser } from "../services/authService";
 
-export const Login = (props) => {
+export const Login = () => {
   const navigate = useNavigate();
+  const [user, setUser] = useState(null);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -15,8 +16,8 @@ export const Login = (props) => {
       .then((userCredential) => {
         // Signed in
         const user = userCredential.user;
-        props.setUser(user);
-        navigate("/");
+        setUser(user);
+        navigate("/AccountSettings");
       })
       .catch((error) => {
         const errorCode = error.code;

@@ -1,10 +1,11 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Hamburger } from "./Hamburger";
 import { MenuOverlay } from "./MenuOverlay";
 import { SearchComponent } from "./SearchComponent";
+import userEvent from "@testing-library/user-event";
 
-export const Navbar = () => {
+export const Navbar = ({ user }) => {
   const [hamburgerOpen, setHamburgerOpen] = useState(false);
 
   return (
@@ -26,9 +27,15 @@ export const Navbar = () => {
               </Link>
             </li>
             <li>
-              <Link to="/Login" className="text-white hover:text-gray-200">
-                <i className="fa-solid fa-user text-3xl"></i>
-              </Link>
+              {user ? (
+                <Link to="/AccountSettings">
+                  <span className="text-white text-2xl">{user.email}</span>
+                </Link>
+              ) : (
+                <Link to="/Login" className="text-white hover:text-gray-200">
+                  <i className="fa-solid fa-user text-3xl"></i>
+                </Link>
+              )}
             </li>
           </ul>
           <div className="text-white sm:hidden">

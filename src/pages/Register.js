@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { registerUser } from "../services/authService";
 import { Navbar } from "../components/navbar/Navbar";
+import { Footer } from "../components/footer/Footer";
 
 export const Register = () => {
   const navigate = useNavigate();
@@ -113,6 +114,7 @@ export const Register = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };
