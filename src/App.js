@@ -9,6 +9,7 @@ import { Register } from "./pages/Register"; // Corrected import paths
 import { Test } from "./pages/Test"; // Corrected import paths
 import { subscribeToAuthChanges } from "./services/authService";
 import { AccountSettings } from "./components/account/AccountSettings";
+import { Navbar } from "./components/navbar/Navbar";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -45,6 +46,7 @@ function App() {
           element={<AccountSettings user={user} />}
         />
         <Route path="/Test" element={<Test />} />
+        <Route path="*" element={<h1>Not Found</h1>} />
       </Routes>
     </>
   );

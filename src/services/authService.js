@@ -5,6 +5,10 @@ import {
   signInWithEmailAndPassword,
   signOut,
   updateProfile,
+  sendEmailVerification,
+  sendPasswordResetEmail,
+  updateEmail,
+  updatePassword,
 } from "firebase/auth";
 
 import { auth } from "../data/firebase";
@@ -47,7 +51,7 @@ export const resetPassword = (email) => {
     });
 };
 
-export const updateEmail = (email) => {
+export const updateUserEmail = (email) => {
   // Business logic for updating email
   updateEmail(auth.currentUser, email)
     .then(() => {
@@ -60,7 +64,8 @@ export const updateEmail = (email) => {
     });
 };
 
-export const updatePassword = (newPassword) => {
+export const updateUserPassword = (newPassword) => {
+  const user = "";
   // Business logic for updating password
   updatePassword(user, newPassword)
     .then(() => {

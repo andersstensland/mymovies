@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { Hamburger } from "./Hamburger";
 import { MenuOverlay } from "./MenuOverlay";
 import { SearchComponent } from "./SearchComponent";
-import userEvent from "@testing-library/user-event";
 
 export const Navbar = ({ user }) => {
   const [hamburgerOpen, setHamburgerOpen] = useState(false);
@@ -26,10 +25,10 @@ export const Navbar = ({ user }) => {
                 <SearchComponent />
               </Link>
             </li>
-            <li>
+            <li className="flex items-center">
               {user ? (
                 <Link to="/AccountSettings">
-                  <span className="text-white text-2xl">{user.email}</span>
+                  <span className="text-white text-lg">{user.email}</span>
                 </Link>
               ) : (
                 <Link to="/Login" className="text-white hover:text-gray-200">

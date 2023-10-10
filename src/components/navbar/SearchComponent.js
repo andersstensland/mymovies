@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { fetchData } from "../../data/fetchData";
 
 export const SearchComponent = () => {
-  const [searchText, setSearchText] = React.useState("");
+  const [activeSearch, setActiveSearch] = useState([]);
   const [movies, setMovies] = useState([]);
 
-  // TODO: Add code to fetch movies
   useEffect(() => {
     async function fetchMovieData() {
       try {
@@ -19,47 +19,44 @@ export const SearchComponent = () => {
     fetchMovieData();
   }, []);
 
-  const handleSearchChange = (event) => {
-    setSearchText(event.target.value);
+  const handleSearch = (e) => {
+    const searchTerm = e.target.value.toLowerCase();
 
-    console.log(searchText);
+    if (searchTerm === "") {
+      setActiveSearch([]);
+      return;
+    }
 
-    // TODO: Add code to filter movies by title
-    const filteredMovies = movies.filter((movie) => {
-      const titleMatch = movie.MovieName.toLowerCase().includes(
-        searchText.toLowerCase()
-      );
+    const matchingMovies = movies.filter((movie) =>
+      movie.MovieName.toLowerCase().includes(searchTerm)
+    );
 
-      return titleMatch;
-    });
+    setActiveSearch(matchingMovies.slice(0, 1));
   };
 
   return (
-    <div className="flex items-center">
-      <div className="flex space-x-1">
+    <form className="w-full relative">
+      <div className="relative">
         <input
-          type="text"
-          className="block w-full px-4 py-2 text-black bg-white border rounded-full focus:border-gray-400 focus:ring-gray-300 focus:outline-none focus:ring focus:ring-opacity-40"
-          placeholder="Search..."
-          onInput={handleSearchChange}
+          type="search"
+          placeholder="Type Here"
+          className="w-full p-4 rounded-full bg-slate-800"
+          onChange={(e) => handleSearch(e)}
         />
-        <button className="px-4 text-white bg-grey-600 rounded-full ">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="w-5 h-5"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            strokeWidth={2}
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-            />
-          </svg>
+        <button className="absolute right-1 top-1/2 -translate-y-1/2 p-4 rounded-full">
+          <i className="fas fa-search"></i>
         </button>
       </div>
-    </div>
+
+      {activeSearch.length > 0 && (
+        <div className="absolute top-20 p-4 bg-slate-800 text-white w-full rounded-xl left-1/2 -translate-x-1/2 flex flex-col gap-2">
+          {activeSearch.map((m) => (
+            <Link to={`/movie/${m.Id}`} key={m.Id}>
+              <span key={m.MovieName}>{m.MovieName}</span>
+            </Link>
+          ))}
+        </div>
+      )}
+    </form>
   );
 };
