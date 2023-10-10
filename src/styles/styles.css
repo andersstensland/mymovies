@@ -1,0 +1,7 @@
+/* styles.css */
+.bg-custom {
+  background-image: url("../assets/images/home/bg-img.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
