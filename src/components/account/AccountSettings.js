@@ -66,18 +66,29 @@ export const AccountSettings = ({ user }) => {
 
                 <div className="mb-4">
                   <label className="block text-sm font-medium text-gray-600">
-                    Password
+                    First Name
                   </label>
                   <input
-                    type="password"
+                    type="text"
                     className="mt-1 p-2 w-full border rounded-md"
-                    placeholder="Leave blank to keep the same"
+                    required
                   />
                 </div>
 
                 <div className="mb-4">
                   <label className="block text-sm font-medium text-gray-600">
-                    Password Confirmation
+                    Last Name
+                  </label>
+                  <input
+                    type="text"
+                    className="mt-1 p-2 w-full border rounded-md"
+                    required
+                  />
+                </div>
+
+                <div className="mb-4">
+                  <label className="block text-sm font-medium text-gray-600">
+                    Password
                   </label>
                   <input
                     type="password"
@@ -102,12 +113,34 @@ export const AccountSettings = ({ user }) => {
 
                 <div className="mb-4">
                   <label className="block text-sm font-medium text-gray-600">
-                    Confirm Changed Email
+                    Confirm Change Email
                   </label>
                   <input
                     type="email"
                     className="mt-1 p-2 w-full border rounded-md"
                     required
+                  />
+                </div>
+
+                <div className="mb-4">
+                  <label className="block text-sm font-medium text-gray-600">
+                    Location
+                  </label>
+                  <input
+                    type=""
+                    className="mt-1 p-2 w-full border rounded-md"
+                    required
+                  />
+                </div>
+
+                <div className="mb-4">
+                  <label className="block text-sm font-medium text-gray-600">
+                    Password Confirmation
+                  </label>
+                  <input
+                    type="password"
+                    className="mt-1 p-2 w-full border rounded-md"
+                    placeholder="Leave blank to keep the same"
                   />
                 </div>
               </div>

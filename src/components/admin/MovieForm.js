@@ -2,12 +2,13 @@ import React from "react";
 
 export const MovieForm = () => {
   return (
-    <div className="bg-gray-200 flex flex-col w-fit p-8">
-      <form onSubmit={""} className="flex flex-col pt-4">
+    <div className="bg-white flex flex-col w-fit rounded shadow p-4">
+      <form onSubmit={""} className="flex flex-col">
+        <h3 className="text-2xl font-semibold mb-4">Add movie</h3>
         <label className="flex flex-col">
           Title:
           <input
-            className="p-2 mb-2"
+            className="p-2 mb-2 border"
             type="text"
             name="title"
             value={""}
@@ -17,20 +18,20 @@ export const MovieForm = () => {
         <label className="flex flex-col">
           Director:
           <input
-            className="p-2 mb-2"
+            className="p-2 mb-2 border"
             type="text"
             name="director"
             value={""}
-            onChange={"this.handleChange"}
+            onChange={""}
           />
         </label>
         <label className="flex flex-col">
           Category:
           <select
-            className="p-2 mb-2"
+            className="p-2 mb-2 border"
             name="category"
             value={"this.state.category"}
-            onChange={"this.handleChange"}
+            onChange={""}
           >
             <option value="Action">Action</option>
             <option value="Comedy">Comedy</option>
@@ -43,33 +44,19 @@ export const MovieForm = () => {
           </select>
         </label>
         <label className="flex flex-col">
-          Stars:
-          <div className="">
-            {[1, 2, 3, 4, 5].map((star) => (
-              <i
-                key={star}
-                className={`fa-solid fa-star fa-2x "text-yellow-500"
-                }`}
-                onMouseOver={""} // Toggle rating on hover
-                onClick={""} // Toggle rating on click
-              ></i>
-            ))}
-          </div>
-        </label>
-        <label className="flex flex-col">
           Image:
           <input
-            className="bg-gray-500 text-white rounded p-2 mb-2"
+            className="text-white rounded p-2 mb-2"
             type="file"
             accept="image/*"
             name="image"
-            onChange={"handleImageChange"}
+            onChange={""}
           />
         </label>
         <input
           className="p-2 bg-blue-500 text-white rounded"
           type="submit"
-          value="Submit"
+          value="Add Movie"
         />
       </form>
     </div>

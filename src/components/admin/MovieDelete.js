@@ -3,7 +3,7 @@ import React from "react";
 export const MovieDelete = () => {
   return (
     <div className="bg-white p-4 rounded shadow">
-      <h1 className="text-2xl font-semibold mb-4">Delete Movie</h1>
+      <h3 className="text-2xl font-semibold mb-4">Delete Movie</h3>
       <div className="mb-4">
         <label className="block">
           Enter Movie ID:

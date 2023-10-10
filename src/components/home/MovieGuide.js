@@ -5,7 +5,7 @@ export const MovieGuide = () => {
   return (
     <>
       {/* How It Works Section */}
-      <div className="flex bg-black md:flex-row pl-14 h-full w-full text-white">
+      <div className="flex bg-black md:flex-row pl-14 h-full w-full text-white p-4 pb-12">
         <div className="flex flex-col flex-1 md:px-8">
           {/* Content for the How it works section */}
           <h1 className="sm:text-lg md:text-2xl lg:text-3xl py-4 font-bold text-center">

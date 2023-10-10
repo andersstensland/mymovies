@@ -10,6 +10,7 @@ import { Test } from "./pages/Test"; // Corrected import paths
 import { subscribeToAuthChanges } from "./services/authService";
 import { AccountSettings } from "./components/account/AccountSettings";
 import { Navbar } from "./components/navbar/Navbar";
+import { AdminDashboard } from "./pages/AdminDashboard";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -47,6 +48,7 @@ function App() {
         />
         <Route path="/Test" element={<Test />} />
         <Route path="*" element={<h1>Not Found</h1>} />
+        <Route path="/AdminDashboard" element={<AdminDashboard />} />
       </Routes>
     </>
   );

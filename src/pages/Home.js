@@ -38,8 +38,8 @@ export const Home = ({ user }) => {
               You can now save your favorite movies and write reviews about
               them.
             </h5>
-            <Link to="/Movies">
-              <button className="bg-transparent text-white px-4 py-2 rounded outline sm:w-1/3 md:w-2/4">
+            <Link to="/MovieList">
+              <button className="bg-transparent text-white px-4 py-2 rounded outline sm:w-1/3 md:w-2/5">
                 All Movies
               </button>
             </Link>
