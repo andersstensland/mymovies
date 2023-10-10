@@ -1,6 +1,7 @@
 import React from "react";
 
 export const MovieForm = () => {
+  // const [title, setTitle] = useState("");
   return (
     <div className="bg-gray-200 flex flex-col w-fit p-8">
       <form onSubmit={""} className="flex flex-col pt-4">
