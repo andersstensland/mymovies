@@ -4,7 +4,7 @@ import { Navbar } from "../components/navbar/Navbar";
 import { useState } from "react";
 import { Footer } from "../components/footer/Footer";
 
-export const ForgotPassword = () => {
+export const ForgotPassword = ({ user }) => {
   const [email, setEmail] = useState("");
   return (
     <div className="bg-black">

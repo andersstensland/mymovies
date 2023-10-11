@@ -1,6 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
+import { AccountSettings } from "./components/account/AccountSettings";
 import { MovieDetails } from "./components/movelist/MovieDetails"; // Corrected import paths
+import { AdminDashboard } from "./pages/AdminDashboard";
 import { ForgotPassword } from "./pages/ForgotPassword"; // Corrected import paths
 import { Home } from "./pages/Home"; // Corrected import paths
 import { Login } from "./pages/Login"; // Corrected import paths
@@ -8,9 +10,6 @@ import { MovieList } from "./pages/MovieList"; // Corrected import paths
 import { Register } from "./pages/Register"; // Corrected import paths
 import { Test } from "./pages/Test"; // Corrected import paths
 import { subscribeToAuthChanges } from "./services/authService";
-import { AccountSettings } from "./components/account/AccountSettings";
-import { Navbar } from "./components/navbar/Navbar";
-import { AdminDashboard } from "./pages/AdminDashboard";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -37,11 +36,14 @@ function App() {
     <>
       <Routes>
         <Route path="/" element={<Home user={user} />} />
-        <Route path="/MovieList" element={<MovieList />} />
+        <Route path="/MovieList" element={<MovieList user={user} />} />
         <Route path="/Login" element={<Login />} />
-        <Route path="/Register" element={<Register />} />
-        <Route path="/movie/:movieId" element={<MovieDetails />} />
-        <Route path="/ForgotPassword" element={<ForgotPassword />} />
+        <Route path="/Register" element={<Register user={user} />} />
+        <Route path="/movie/:movieId" element={<MovieDetails user={user} />} />
+        <Route
+          path="/ForgotPassword"
+          element={<ForgotPassword user={user} />}
+        />
         <Route
           path="/AccountSettings"
           element={<AccountSettings user={user} />}

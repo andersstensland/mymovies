@@ -17,15 +17,9 @@ export const Home = ({ user }) => {
   return (
     <div>
       <div className="relative bg-custom min-h-screen">
-        {/* Gradient Overlay */}
-        <div
-          className="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-50"
-          style={overlayStyles}
-        ></div>
-
         <Navbar user={user} />
 
-        <div className="flex flex-col md:flex-row justify-center px-14 py-4">
+        <div className="flex flex-col md:flex-row justify-center pl-12 py-4">
           {/* Left Section (Upper Left) */}
           <div className="flex flex-col flex-1 text-white justify-between">
             <h1 className="text-4xl md:text-5xl py-4 font-bold">
@@ -51,7 +45,7 @@ export const Home = ({ user }) => {
           </div>
         </div>
         {/* Lower Section (Full Width) */}
-        <div className="pl-14 py-4 text-white">
+        <div className="pl-12 py-4 text-white">
           {/* Content for the lower section */}
           <h1 className="font-bold text-white text-lg">Most popular movies</h1>
           <div className="flex flex-row py-8">

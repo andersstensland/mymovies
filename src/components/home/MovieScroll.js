@@ -56,7 +56,7 @@ export const MovieScroll = () => {
         alignItems: "center",
       }}
     >
-      <div className="flex space-x-4">
+      <div className="flex space-x-4 py-4 px-2 max-h-fit">
         {movies.map((movie) => (
           <Movie
             key={movie._id}

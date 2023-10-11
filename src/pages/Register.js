@@ -5,7 +5,7 @@ import { registerUser } from "../services/authService";
 import { Navbar } from "../components/navbar/Navbar";
 import { Footer } from "../components/footer/Footer";
 
-export const Register = () => {
+export const Register = ({ user }) => {
   const navigate = useNavigate();
 
   const [email, setEmail] = useState("");

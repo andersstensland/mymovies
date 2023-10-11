@@ -4,7 +4,7 @@ import { Navbar } from "../navbar/Navbar";
 import { fetchMovieId } from "../../data/fetchMovieId";
 import { posters } from "../../index";
 
-export const MovieDetails = () => {
+export const MovieDetails = ({ user }) => {
   const { movieId } = useParams();
   const [movieDetails, setMovieDetails] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
@@ -33,7 +33,7 @@ export const MovieDetails = () => {
 
   return (
     <div className="bg-black">
-      <Navbar />
+      <Navbar user={user} />
       <div className="px-14 py-4 bg-white">
         <div className="bg-white shadow-md p-4 rounded-md mb-4">
           <h2 className="text-2xl font-semibold mb-4">Movie Details</h2>
@@ -60,6 +60,13 @@ export const MovieDetails = () => {
                   <p className="text-gray-600">
                     Director: {movieDetails.director}
                   </p>
+                </div>
+                <div className="grid w-1/6">
+                  <button className="rounded">Add to watch list</button>
+                  <button className="text-black rounded">Write Review</button>
+                  <button className="rounded">
+                    <i className="fa-solid fa-heart text-gray-500 fa-2xl"></i>
+                  </button>
                 </div>
               </div>
             )

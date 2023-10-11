@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { Navbar } from "../components/navbar/Navbar";
 import { Footer } from "../components/footer/Footer";
 
-export const MovieList = () => {
+export const MovieList = ({ user }) => {
   const { movies } = useFetchMovieData();
   const [genreFilter, setGenreFilter] = useState("All");
   const [searchText, setSearchText] = useState("");
@@ -29,7 +29,7 @@ export const MovieList = () => {
 
   return (
     <div className="bg-black">
-      <Navbar />
+      <Navbar user={user} />
       <div className="bg-gray-200 px-20 py-4">
         <h2 className="text-2xl font-semibold mb-4">Movie List</h2>
         <div className="flex mb-4">
@@ -85,7 +85,7 @@ export const MovieList = () => {
                   <p className="text-sm text-gray-600 mb-2">{movie.category}</p>
                   <p className="text-sm text-gray-600 mb-2">{movie.director}</p>
                   <img
-                    className="object-cover h-[400px] w-full rounded"
+                    className="object-cover w-full rounded"
                     src={posters[`${movie.image}`]}
                     alt={movie.MovieName}
                   />

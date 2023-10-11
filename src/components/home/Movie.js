@@ -8,7 +8,7 @@ export const Movie = ({ title, posterUrl }) => {
   };
 
   return (
-    <div className="max-w-xs rounded overflow-hidden">
+    <div className="max-w-xs rounded overflow-hidden hover:scale-110 duration-300">
       <img
         className="object-cover w-full"
         src={posterUrl}
