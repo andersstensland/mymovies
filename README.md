@@ -57,7 +57,6 @@ These instructions will help you set up a local development instance of MyMovies
    npm start
 
 ## Usage
-Great job on setting up MyMovies! Now, let's dive into how users can make the most out of your web app.
 
 Browsing Movies
 Homepage: Upon entering the website, users are greeted with a curated selection of movies. They can scroll through this section to discover new and popular releases.
