@@ -63,6 +63,7 @@ Homepage: Upon entering the website, users are greeted with a curated selection 
 
 Navigation: Use the top navigation bar to explore different sections of the app. Categories like "Top Rated," "Genres," and "Directors" can help users narrow down their preferences.
 
+# Searching for movies
 Searching for Movies
 Search Bar: The search bar at the top allows users to find specific movies by title, genre, or director. This is a handy tool for those looking for something particular.
 Managing Favorites
