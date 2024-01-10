@@ -66,17 +66,18 @@ Navigation: Use the top navigation bar to explore different sections of the app.
 #### Searching for movies
 Search Bar: The search bar at the top allows users to find specific movies by title, genre, or director. This is a handy tool for those looking for something particular.
 
-#### Managing Favorites
+#### Managing Favorites (Not working yet)
 Managing Favorites
 User Profile: Users can create an account or log in to save their favorite movies. The profile section stores their saved movies for quick access.
 
-#### Writing Reviews
+#### Writing Reviews (Not working yet)
 Writing Reviews
 Review Section: Each movie page should have a dedicated section for user reviews. Encourage users to share their thoughts, ratings, and recommendations.
 Contributing
 Your project is open for contributions, which is fantastic! Encourage developers to contribute to the project by following the guidelines outlined in the "Contributing" section of the README.
 
-Contributing
+
+## Contributing
 Fork the Repository: Developers should start by forking the main repository to their GitHub account.
 
 Clone Locally: After forking, they can clone the repository to their local machine.
@@ -89,10 +90,8 @@ Test Locally: Before submitting a pull request, it's essential to test the chang
 
 Submit Pull Request: Once satisfied with the changes, developers can submit a pull request. Encourage them to provide a detailed description of their contribution.
 
-License
-Include information about the license under which MyMovies is distributed.
+## License
+OPEN SOURCE
 
-Acknowledgments
-If there are any individuals or resources that you'd like to acknowledge, this is the section to do so.
 
 This README provides a comprehensive guide for users and contributors, helping them navigate and understand MyMovies better. Great work!
